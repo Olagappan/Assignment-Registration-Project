@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/register.css' %}" rel="stylesheet">
+</head>
+<body>
+<div>
+<h2 align="center" style="color:red">Admin Registration page</h2>
+ <form action = 'aregdata' method="post">
+     {% csrf_token %}
+     <h3 style="color:red" align="center">{{data}}</h3>
+        <table align="center">
+    <tr>
+        <td>UserName:</td>
+        <td><input type = "text" name ="txtusername" placeholder="name"></td>
+        </tr>
+          <tr>
+        <td>Email:</td>
+        <td><input type = "email" name ="txtemail" placeholder="email"></td>
+        </tr>
+
+            <tr>
+        <td>Password:</td>
+        <td><input type = "password" name ="txtpawd" placeholder="password"></td>
+        </tr>
+
+            <tr>
+        <td>Confirm Password:</td>
+        <td><input type = "password" name ="conpawd" placeholder="confirm password"></td>
+        </tr>
+
+            <tr>
+        <td>Mobile:</td>
+        <td><input type = "number" name ="txtnum" placeholder="mobile"></td>
+        </tr>
+
+              <tr>
+        <td>Language known:</td>
+        <td><input type = "checkbox" id ="check"><label>English</label></td>
+        <td><input type = "checkbox" id ="checkbox"><label>Tamil</label></td>
+
+        </tr>
+
+
+            <tr>
+                <td>Gender:</td>
+        <td><input type = "radio" id = "male" name = "gender"><label>Male</label></td><br>
+        <td><input type = "radio" id = "female" name = "gender"><label>Fmale</label></td>
+        </tr>
+
+            <tr>
+        <td>Course:</td>
+                <td>
+                    <select name="ddlcourse">
+                        <option>--select--</option>
+                        <option>Python</option>
+                        <option>Java</option>
+                        <option>.net</option>
+                        <option>Html</option>
+
+                </select>
+                </td>
+                </tr>
+            <tr>
+        <td>City:</td>
+                <td>
+                    <select name="ddlcity">
+                        <option>--select--</option>
+                        <option>Bangalore</option>
+                        <option>Chennai</option>
+                        <option>Mysore</option>
+                        <option>Hyderabad</option>
+                </select>
+                </td>
+                </tr>
+        <td align="center" ><input type = "submit" name = "btnsub" value = "Register"></td>
+        </tr>
+
+        </table>
+
+    </form>
+</div>
+</body>
+</html>
